@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<project name="DiffDir" basedir="." default="jar">
+		<property name="src" value="src"/>
+		<property name="build" value="build"/>
+		<property name="classes" value="${build}/classes"/>
+		<property name="lib" value="lib"/>
+		<property name="jarfile" value="${lib}/diffdir.jar"/>
+
+		<path id="classpath">
+			<pathelement location="${lib}/jlibdiff.jar"/>
+		</path>
+
+		<target name="init">
+			<mkdir dir="${build}"/>
+			<mkdir dir="${classes}"/>
+		</target>
+
+		<target name="clean">
+			<delete dir="${build}"/>
+			<delete file="${jarfile}"/>
+		</target>
+
+		<target name="compile" depends="init">
+			<javac srcdir="${src}" destdir="${classes}" debug="true">
+				<classpath refid="classpath"/>
+			</javac>
+		</target>
+
+		<target name="jar" depends="compile">
+			<jar basedir="${classes}" destfile="${jarfile}" />
+			<delete dir="${build}"/>
+		</target>
+
+</project>
+
+
+
+

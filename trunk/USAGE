@@ -1,0 +1,15 @@
+USAGE
+=====
+
+Make sure java is in your PATH or else you have to specify
+the complete path for java in diffdir.bat or diffdir.sh
+
+diffdir.bat version-1.1 version-1.0 version-1.0-patch
+
+version-1.1 is newer release
+version-1.0 is older release
+version-1.0-patch is the output directory required by us.
+
+Please go through README files for more details.
+
+
