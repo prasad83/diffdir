@@ -1,0 +1,42 @@
+**ABOUT**
+
+This application was written basically to make the process of server updates
+easy when the code is being developed.
+
+When the server is setup with first version of codebase, second version of
+development will be continued. After the second version is released, you
+can use this application to compute the difference between the first version
+and second version.
+
+The output will contain the changed files / new files that needs to be added
+to your server to keep it up to date.
+
+**USAGE**
+```
+java pra.tools.dirdiff.core.BasicDiff fresh_copy old_copy [output_dir]
+```
+
+**BREIF EXPLANATION**
+
+The computation of diff is described below in brief:
+```
+First input is treated as fresh copy
+Second second is treated as old copy
+
+1. If there are changes in files that exist in both the copies,
+   the file from first directory is copied to output directory.
+
+2. If there is a new file in first directory it is added to output directory.
+
+3. If there is a file in second directory but not in first directory,
+   the file copy is ignored.
+
+4. If output_dir is not specified then a folder by name output-<random-number> 
+   is created with respect to parent directory of old_copy directory.
+```
+
+Drop me a mail if you have any feedbacks or you find this application useful.
+
+**CONTACT**
+
+prasad83.a@gmail.com
